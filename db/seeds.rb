@@ -5,7 +5,7 @@ require 'random_data'
   User.create!(
     name: RandomData.random_name,
     email: RandomData.random_email,
-    password: RandomData.random_sentence
+    password: "helloworld"
   )
 end
 users = User.all
