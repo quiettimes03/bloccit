@@ -79,4 +79,14 @@ RSpec.describe Post, type: :model do
        end
      end
    end
+
+   describe "after_create" do
+     before do
+       @auto_vote = Vote.new(value: 1, post: post, user: user)
+     end
+
+     it "auto up votes a current users post" do
+       auto_vote = user.post.votes.create!(value: 1)
+       expect(auto_vote).to eq(1)
+   end
  end
